@@ -10,7 +10,6 @@ export class PlayerLaser extends Actor {
       vel: vec(0, -300),
     });
 
-    this.on('exitviewport', () => this.kill());
   }
 
   onInitialize() {
@@ -22,6 +21,8 @@ export class PlayerLaser extends Actor {
         },
       })
     );
+
+    this.on('exitviewport', () => this.kill());
   }
 
   onPostUpdate(engine, delta) {

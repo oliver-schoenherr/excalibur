@@ -5,6 +5,8 @@ const Images = {
   ShipExplosion: new ImageSource('./../images/ship_explosion.png'),
   Laser: new ImageSource('./../images/laser.png'),
   Asteroid: new ImageSource('./../images/asteroid.png'),
+  StaticBackground: new ImageSource('./../images/static_background.png'),
+  BackgroundTile: new ImageSource('./../images/background_tile.png'),
 }
 
 const Sounds = {

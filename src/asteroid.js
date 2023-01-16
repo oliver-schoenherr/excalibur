@@ -1,4 +1,4 @@
-import {Actor, Random, Sprite, Timer, vec} from "../excalibur.js";
+import {Actor, Random, Sprite, Timer, vec, Vector} from "../excalibur.js";
 import {Images} from "./resources.js";
 
 export class Asteroid extends Actor {
@@ -8,6 +8,7 @@ export class Asteroid extends Actor {
       width: 256 / 4,
       height: 276 / 4,
       vel: vec(0, 100),
+      anchor: vec(0 ,1),
     });
 
     this.on('exitviewport', () => this.kill());
@@ -32,7 +33,7 @@ export class Asteroid extends Actor {
       interval: 500,
       repeats: true,
       fcn: () => {
-        engine.add(new Asteroid(vec(random.integer(0, engine.drawWidth), 0)))
+        engine.add(new Asteroid(vec(random.integer(0, engine.drawWidth), engine.currentScene.camera.viewport.top)))
       }
     })
     engine.add(timer);
