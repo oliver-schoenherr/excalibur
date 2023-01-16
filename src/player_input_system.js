@@ -20,7 +20,7 @@ export class PlayerInputSystem extends System {
   systemType = SystemType.Update
 
   update(entities, delta) {
-    let pointer = this.engine.input.pointers.primary.lastWorldPos;
+    let pointer = this.engine.screenToWorldCoordinates(this.engine.input.pointers.primary.lastScreenPos);
 
     for (let entity of entities) {
       const transform = entity.get(TransformComponent);

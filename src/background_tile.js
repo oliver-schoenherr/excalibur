@@ -1,4 +1,4 @@
-import {Actor, CollisionType, Color, Sprite, vec, Vector} from "../excalibur.js";
+import {Actor, CollisionType, Color, ParallaxComponent, Sprite, vec, Vector} from "../excalibur.js";
 import {Images} from "./resources.js";
 
 export class BackgroundTile extends Actor {
@@ -14,6 +14,7 @@ export class BackgroundTile extends Actor {
   }
 
   onInitialize(engine) {
+    this.addComponent(new ParallaxComponent(vec(0.5, 0.5)))
     this.graphics.use(new Sprite({
         image: Images.BackgroundTile,
         destSize: {

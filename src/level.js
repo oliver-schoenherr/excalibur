@@ -5,6 +5,7 @@ import {PlayerMovementSystem} from "./player_movement_system.js";
 import {Asteroid} from "./asteroid.js";
 import {BackgroundManager} from "./background_manager.js";
 import {StaticBackground} from "./static_background.js";
+import {DestroyedSystem} from "./destroyed_system.js";
 
 export class Level extends Scene {
 
@@ -16,5 +17,6 @@ export class Level extends Scene {
     this.camera.vel = vec(0,-20);
     this.world.add(new PlayerInputSystem(engine));
     this.world.add(new PlayerMovementSystem());
+    this.world.add(new DestroyedSystem());
   }
 }
